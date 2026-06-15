@@ -1,0 +1,108 @@
+{
+  "cases": [
+    {
+      "id": "case-001",
+      "difficulty": "입문",
+      "title": "대항력 없는 임차인 - 권리상 안전한 물건",
+      "property": {
+        "type": "아파트",
+        "location": "(가상) ○○시 ○○구",
+        "appraisal_value": 500000000,
+        "min_bid_price": 400000000,
+        "note": "1회 유찰(20% 저감)"
+      },
+      "registry": [
+        { "date": "2021-03-15", "type": "근저당권", "holder": "○○은행", "amount": 240000000 },
+        { "date": "2023-06-10", "type": "가압류", "holder": "△△카드", "amount": 30000000 }
+      ],
+      "tenant": {
+        "exists": true,
+        "move_in_date": "2022-05-10",
+        "fixed_date": "2022-05-10",
+        "deposit": 100000000,
+        "demand_for_distribution": true,
+        "occupying": true
+      },
+      "distribution_deadline": "2024-09-30",
+      "analysis": {
+        "extinction_baseline": "2021-03-15 근저당권(○○은행) — 가장 선순위 담보권이 말소기준권리",
+        "tenant_opposability": "임차인 전입 2022-05-10(대항력 기준일 5/11)은 말소기준권리(2021-03-15)보다 뒤 → 대항력 없음",
+        "assumed_rights": [],
+        "extinguished_rights": ["근저당권", "가압류", "대항력 없는 임차권"],
+        "estimated_extra_burden": 0,
+        "risk_level": "낮음",
+        "comment": "대항력이 없으므로 임차인 보증금을 낙찰자가 인수하지 않는다. 임차인은 배당순위에서 받는 만큼만 회수하며, 못 받아도 낙찰자 부담이 아니다. 점유는 인도명령으로 해소 가능.",
+        "conclusion": "권리상 안전한 물건. 입문 학습용으로 적합."
+      }
+    },
+    {
+      "id": "case-002",
+      "difficulty": "중급",
+      "title": "선순위 대항력 임차인 - 입찰가에 따라 인수 위험",
+      "property": {
+        "type": "아파트",
+        "location": "(가상) □□시 □□구",
+        "appraisal_value": 400000000,
+        "min_bid_price": 320000000,
+        "note": "1회 유찰(20% 저감)"
+      },
+      "registry": [
+        { "date": "2022-08-01", "type": "근저당권", "holder": "□□은행", "amount": 180000000 },
+        { "date": "2024-01-15", "type": "압류", "holder": "세무서", "amount": 0 }
+      ],
+      "tenant": {
+        "exists": true,
+        "move_in_date": "2021-11-20",
+        "fixed_date": "2021-11-20",
+        "deposit": 300000000,
+        "demand_for_distribution": true,
+        "occupying": true
+      },
+      "distribution_deadline": "2024-11-30",
+      "analysis": {
+        "extinction_baseline": "2022-08-01 근저당권(□□은행)이 말소기준권리",
+        "tenant_opposability": "임차인 전입·확정일자 2021-11-20(대항력 기준일 11/21)은 말소기준권리(2022-08-01)보다 앞섬 → 대항력 O, 우선변제권도 선순위(1순위 배당)",
+        "assumed_rights": ["대항력 있는 임차인의 보증금 중 배당으로 회수하지 못한 잔액(조건부 인수)"],
+        "extinguished_rights": ["근저당권", "압류"],
+        "estimated_extra_burden": "낙찰가에 따라 0 ~ 최대 3억(보증금)",
+        "risk_level": "중간",
+        "comment": "임차인이 1순위로 배당받는다. 낙찰가가 보증금 3억을 충분히 커버하면 임차인이 전액 배당받아 임차권 소멸(낙찰자 부담 0). 그러나 저가 낙찰로 임차인이 전액을 못 받으면, 대항력이 있어 못 받은 잔액을 낙찰자가 인수한다. 보증금이 감정가 대비 크다는 점이 핵심 함정.",
+        "conclusion": "입찰가를 '임차인이 전액 배당받을 수 있는 수준 이상'으로 써야 인수 위험이 없다. 권리분석에서 가장 흔히 사고가 나는 유형."
+      }
+    },
+    {
+      "id": "case-003",
+      "difficulty": "고급",
+      "title": "유치권 신고 - 등기 순위와 무관한 인수권리",
+      "property": {
+        "type": "근린상가",
+        "location": "(가상) ◇◇시 ◇◇구",
+        "appraisal_value": 600000000,
+        "min_bid_price": 384000000,
+        "note": "2회 유찰(누적 저감) — 유치권 부담이 반영되었을 가능성"
+      },
+      "registry": [
+        { "date": "2020-02-10", "type": "근저당권", "holder": "◇◇은행", "amount": 360000000 },
+        { "date": "2023-09-01", "type": "가압류", "holder": "◎◎상사", "amount": 50000000 }
+      ],
+      "tenant": {
+        "exists": false,
+        "note": "소유자 점유로 조사되었으나, 공사업체가 점유를 주장"
+      },
+      "special_rights": [
+        { "type": "유치권", "claimant": "▽▽건설", "basis": "공사대금", "amount": 80000000, "status": "신고됨(점유 주장)" }
+      ],
+      "distribution_deadline": "2024-08-31",
+      "analysis": {
+        "extinction_baseline": "2020-02-10 근저당권(◇◇은행)이 말소기준권리",
+        "tenant_opposability": "해당 없음(임차인 없음)",
+        "assumed_rights": ["유치권(공사대금 8천만원 주장) — 성립 시 등기 순위와 무관하게 인수(민사집행법 제91조⑤)"],
+        "extinguished_rights": ["근저당권", "가압류"],
+        "estimated_extra_burden": "유치권 성립 시 최대 8천만원 + 명도 분쟁 비용",
+        "risk_level": "높음",
+        "comment": "등기상 권리는 모두 말소되지만, 유치권은 매수인이 인수한다. 유치권은 허위·과장 신고가 많아 점유의 적법성·계속성, 공사대금 채권의 실재, 견련관계를 현장과 증빙으로 반드시 확인해야 한다. 2회 유찰 가격에는 유치권 위험이 일부 반영되어 있을 수 있다.",
+        "conclusion": "고위험 물건. 유치권 성립 여부가 수익성을 좌우한다. 초보자에게는 비권장이며 전문가 검토 필수."
+      }
+    }
+  ]
+}

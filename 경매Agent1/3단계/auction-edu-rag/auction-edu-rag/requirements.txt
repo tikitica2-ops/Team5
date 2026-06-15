@@ -1,0 +1,23 @@
+# --- 핵심 ---
+streamlit>=1.40
+python-dotenv>=1.0
+
+# --- LangChain (멀티에이전트 + RAG) ---
+langchain>=0.3
+langchain-community>=0.3
+langchain-chroma>=0.1
+
+# --- 벡터DB ---
+chromadb>=0.5
+
+# --- LLM 제공자 (둘 중 쓰는 것만 있어도 됨) ---
+langchain-openai>=0.2
+openai>=1.50
+langchain-anthropic>=0.2
+anthropic>=0.40
+
+# --- 토큰 계산 ---
+tiktoken>=0.8
+
+# --- (선택) 한국어 로컬 임베딩으로 교체할 때만 ---
+# sentence-transformers>=3.0
