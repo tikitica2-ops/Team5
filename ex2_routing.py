@@ -4,6 +4,7 @@ def run_router_workflow(user_prompt : str):
 
     name ="상원"
     name ="미라"
+    name ="명진"    
 
     router_prompt = f"""
     사용자의 프롬프트/질문: {user_prompt}
