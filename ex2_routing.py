@@ -3,7 +3,6 @@ from utils import llm_call
 def run_router_workflow(user_prompt : str):
 
     name ="상원"
-    name ="미라"
     name ="명진"    
 
     router_prompt = f"""
